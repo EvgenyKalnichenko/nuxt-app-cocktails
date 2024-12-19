@@ -1,0 +1,15 @@
+@use "mixins" as *;
+@use "theme/index" as *;
+@use "variables" as *;
+@use "normalize" as *;
+@use "fonts" as *;
+
+body {
+  background: var(--main-background);
+  color: var(--main-font-color);
+  font: var(--font-medium);
+}
+
+a {
+  color: var(--main-font-color);
+}

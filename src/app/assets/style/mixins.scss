@@ -1,0 +1,96 @@
+@use "sass:math";
+
+$break-xl: 1640px;
+$break-lg: 1320px;
+$break-md: 1024px;
+$break-sm: 767px;
+$break-xs: 575px;
+$break-xxs: 449px;
+
+// responsive
+@mixin xl-screen() {
+  @media screen and (max-width: $break-xl) {
+    @content;
+  }
+}
+
+@mixin lg-screen() {
+  @media screen and (max-width: $break-lg) {
+    @content;
+  }
+}
+
+@mixin md-screen() {
+  @media screen and (max-width: $break-md) {
+    @content;
+  }
+}
+
+@mixin md-screen-min() {
+  @media screen and (width >= calc($break-md + 1px)) {
+    @content;
+  }
+}
+
+@mixin sm-screen() {
+  @media screen and (max-width: $break-sm) {
+    @content;
+  }
+}
+
+@mixin sm-screen-min() {
+  @media screen and (width >= calc($break-sm + 1px)) {
+    @content;
+  }
+}
+
+@mixin xs-screen() {
+  @media screen and (max-width: $break-xs) {
+    @content;
+  }
+}
+
+@mixin xxs-screen() {
+  @media screen and (max-width: $break-xxs) {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// font-family
+@mixin font($alias, $name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $alias;
+    src:
+      url("../fonts/" + $name + ".woff2") format("woff2"),
+      url("../fonts/" + $name + ".woff") format("woff");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+// блок с соотношением сторон
+// @include responsive-ratio(16,9);
+@mixin ratio($x, $y, $pseudo: true) {
+  $padding: math.div($y, $x) * 100%;
+
+  @if $pseudo {
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}

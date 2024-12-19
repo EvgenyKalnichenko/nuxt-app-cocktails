@@ -1,0 +1,16 @@
+:root {
+  // container
+  --container-width: 1024px;
+  --field: 24px;
+
+  // Бордер радиусы
+  --border-radius-xs: 8px;
+  --border-radius-small: 12px;
+  --border-radius-medium: 16px;
+  --border-radius-large: 24px;
+
+  // animation config
+  --timing-function: ease-in-out;
+  --timing-duration: 0.24s;
+  --transition: var(--timing-duration) var(--timing-function);
+}

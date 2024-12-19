@@ -1,0 +1,65 @@
+<script setup lang="ts">
+    import type { Cocktail } from '~/app/repository/modules/catalog/type'
+    import UiImage from '~/shared/components/UiImage/UiImage.vue'
+
+    defineProps<{
+        cocktail: Cocktail
+    }>()
+
+    function extractIngredients(drink: Cocktail) {
+        const ingredients: string[] = []
+
+        for (const key in drink) {
+            if (key.startsWith('strIngredient') && drink[key as keyof Cocktail]) {
+                ingredients.push(drink[key as keyof Cocktail] as string)
+            }
+        }
+
+        return ingredients
+    }
+</script>
+
+<template>
+    <div class="cocktail-detail">
+        <h2>{{ cocktail.strDrink }}</h2>
+
+        <ul class="catalog-cocktail__list">
+            <li>{{ cocktail.strCategory }}</li>
+            <li>{{ cocktail.strAlcoholic }}</li>
+            <li>{{ cocktail.strGlass }}</li>
+        </ul>
+
+        <h3>Instructions:</h3>
+        <p>{{ cocktail.strInstructions }}</p>
+
+        <h3>List ingredients:</h3>
+        <ul class="catalog-cocktail__list">
+            <li
+                v-for="(ingridient, index) in extractIngredients(cocktail)"
+                :key="index"
+            >
+                {{ ingridient }}
+            </li>
+        </ul>
+
+        <UiImage
+            class="cocktail-detail__image"
+            :src="cocktail.strDrinkThumb"
+        />
+    </div>
+</template>
+
+<style scoped lang="scss">
+.cocktail-detail {
+
+  & > * {
+    margin-bottom: 16px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+}
+</style>

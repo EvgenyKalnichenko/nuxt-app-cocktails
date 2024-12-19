@@ -1,0 +1,14 @@
+@use "mixins" as *;
+
+:root {
+  --font-famaly-main: "TTTravelsTrl", sans-serif;
+  --font-size-xs: 10px;
+  --font-line-xs: 12px;
+  --font-xs: var(--font-size-xs) / var(--font-line-xs) var(--font-famaly-main);
+  --font-size-s: 12px;
+  --font-line-s: 16px;
+  --font-small: var(--font-size-s) / var(--font-line-s) var(--font-famaly-main);
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-medium: var(--font-size-m) / var(--font-line-m) var(--font-famaly-main);
+}
