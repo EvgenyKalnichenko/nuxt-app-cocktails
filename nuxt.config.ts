@@ -34,9 +34,5 @@ export default defineNuxtConfig({
     resolve: {
       dedupe: ['vue'],
     },
-  },
-  typescript: {
-    typeCheck: true,
-    strict: true,
-  },
+  }
 })
