@@ -6,7 +6,7 @@
 
     const route = useRoute()
 
-    const catalogId = computed(() => String(route.meta.id || route.params.id))
+    const catalogId = computed(() => String(route.params.id))
 
     const { data, suspense, isError } = useQuery({
         queryKey: ['catalog', catalogId],
