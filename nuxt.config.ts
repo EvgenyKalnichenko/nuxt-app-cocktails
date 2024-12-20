@@ -6,6 +6,8 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
   srcDir: 'src/',
 
+  modules: ['@nuxt/test-utils/module'],
+
   runtimeConfig: {
     public: {
       NUXT_API_BASE: process.env.NUXT_API_BASE,
