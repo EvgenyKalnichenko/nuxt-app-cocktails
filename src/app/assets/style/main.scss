@@ -5,11 +5,12 @@
 @use "fonts" as *;
 
 body {
-  background: var(--main-background);
-  color: var(--main-font-color);
+  background: var(--base-background);
+  color: var(--text-primary);
   font: var(--font-medium);
+  min-width: 360px;
 }
 
 a {
-  color: var(--main-font-color);
+  color: var(--text-primary);
 }

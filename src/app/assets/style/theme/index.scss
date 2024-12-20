@@ -1,5 +1,12 @@
 :root {
-  --main-background: #0f0f0f;
-  --main-font-color: #fafafa;
-  --main-font-color-revers: #0f0f0f;
+  /* Бэкграунды */
+  --base-background: #0f0f0f;
+  --base-background-secendary: #1e1e1e;
+
+  /* Шрифты */
+  --text-primary: #fafafa;
+  --text-secendary: #cccccc;
+  --text-inverse: #0f0f0f;
+  --text-accent: #18cb6e;
+  --text-danger: #dc3545;
 }

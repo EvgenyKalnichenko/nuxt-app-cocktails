@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import type { Cocktail } from '~/app/repository/modules/catalog/type'
+    import type { Cocktail } from '~/app/repository/modules/cocktail/type'
     import UiImage from '~/shared/components/UiImage/UiImage.vue'
 
     defineProps<{
@@ -20,7 +20,7 @@
 </script>
 
 <template>
-    <div class="cocktail-detail">
+    <article class="cocktail-detail">
         <h2>{{ cocktail.strDrink }}</h2>
 
         <ul class="catalog-cocktail__list">
@@ -42,14 +42,18 @@
             </li>
         </ul>
 
-        <UiImage
-            class="cocktail-detail__image"
-            :src="cocktail.strDrinkThumb"
-        />
-    </div>
+        <figure>
+            <UiImage
+                class="cocktail-detail__image"
+                :src="cocktail.strDrinkThumb"
+                :alt="cocktail.strDrink"
+            />
+            <figcaption>{{ cocktail.strDrink }} cocktail image</figcaption>
+        </figure>
+    </article>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 .cocktail-detail {
 
   & > * {
@@ -60,6 +64,7 @@
     width: 100%;
     height: 100%;
     aspect-ratio: 1/1;
+    display: block;
   }
 }
 </style>

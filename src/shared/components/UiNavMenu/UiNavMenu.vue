@@ -31,8 +31,17 @@
   &__item {
     padding: 8px 16px;
     border-radius: 12px;
-    background-color: gray;
-    transition: var(--transition) background-color;
+    background-color: var(--base-background-secendary);
+    transition: var(--transition) opacity;
+
+    @include hover {
+      opacity: 0.75;
+    }
+
+    &.router-link-active {
+      background-color: var(--text-accent);
+      opacity: 1;
+    }
   }
 }
 </style>

@@ -1,7 +1,7 @@
 import type { FetchOptions } from 'ofetch'
 import { defineNuxtPlugin } from '#app'
 import { $fetch } from 'ofetch'
-import CatalogModule from '~/app/repository/modules/catalog/catalog'
+import CatalogModule from '~/app/repository/modules/cocktail/cocktail'
 
 export interface IApiInstance {
     catalog: CatalogModule
@@ -15,10 +15,8 @@ export default defineNuxtPlugin({
             baseURL: 'https://www.thecocktaildb.com/',
         }
 
-        /** create a new instance of $fetcher with custom option */
         const apiFetcher = $fetch.create(fetchOptions)
 
-        /** an object containing all repositories we need to expose */
         const modules: IApiInstance = {
             catalog: new CatalogModule(apiFetcher),
         }

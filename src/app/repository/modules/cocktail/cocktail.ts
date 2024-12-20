@@ -1,4 +1,4 @@
-import type { GetCocktailResponse } from '~/app/repository/modules/catalog/type'
+import type { GetCocktailResponse } from '~/app/repository/modules/cocktail/type'
 import HttpFactory from '~/app/repository/factory'
 
 class CatalogModule extends HttpFactory {

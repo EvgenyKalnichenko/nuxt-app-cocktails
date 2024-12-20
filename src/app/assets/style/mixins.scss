@@ -76,21 +76,3 @@ $break-xxs: 449px;
     font-display: swap;
   }
 }
-
-// блок с соотношением сторон
-// @include responsive-ratio(16,9);
-@mixin ratio($x, $y, $pseudo: true) {
-  $padding: math.div($y, $x) * 100%;
-
-  @if $pseudo {
-    &::before {
-      content: "";
-      position: relative;
-      display: block;
-      width: 100%;
-      padding-top: $padding;
-    }
-  } @else {
-    padding-top: $padding;
-  }
-}

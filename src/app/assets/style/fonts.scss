@@ -1,5 +1,7 @@
 @use "mixins" as *;
 
+@include font("TTTravelsTrl", "TTTravelsTrl-Regular", 400, normal);
+
 :root {
   --font-famaly-main: "TTTravelsTrl", sans-serif;
   --font-size-xs: 10px;

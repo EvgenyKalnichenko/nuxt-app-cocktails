@@ -1,3 +1,4 @@
+// https://www.vuemastery.com/blog/api-management-in-nuxt-3-with-typescript/#what-is-a-repository-design-pattern
 import type { $Fetch, FetchOptions } from 'ofetch'
 
 class HttpFactory {
@@ -13,8 +14,7 @@ class HttpFactory {
      */
     async call<T>(url: string, options: FetchOptions = {}): Promise<T> {
         const $res = await this.$fetch(url, { ...options })
-
-        return { ...$res }
+        return $res
     }
 
     async get<T>(

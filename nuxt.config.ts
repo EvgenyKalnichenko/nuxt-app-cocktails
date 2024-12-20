@@ -34,5 +34,9 @@ export default defineNuxtConfig({
     resolve: {
       dedupe: ['vue'],
     },
-  }
+  },
+
+  components: [
+    { path: '~/shared/components/', pathPrefix: false },
+  ],
 })
