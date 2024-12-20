@@ -1,7 +1,7 @@
-import type { GetCocktailResponse } from '~/app/repository/modules/cocktail/type'
-import HttpFactory from '~/app/repository/factory'
+import type { GetCocktailResponse } from './type'
+import HttpFactory from '~/shared/lib/httpFactory'
 
-class CatalogModule extends HttpFactory {
+class CocktailModule extends HttpFactory {
     /**
      * Получение информации о коктейле
      */
@@ -10,4 +10,4 @@ class CatalogModule extends HttpFactory {
     }
 }
 
-export default CatalogModule
+export default CocktailModule

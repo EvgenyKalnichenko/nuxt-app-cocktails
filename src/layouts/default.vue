@@ -1,10 +1,5 @@
 <script setup lang="ts">
-    const menu = [
-        { name: 'Margarita', path: '/cocktail/margarita' },
-        { name: 'Mojito', path: '/cocktail/mojito' },
-        { name: 'A1', path: '/cocktail/a1' },
-        { name: 'Kir', path: '/cocktail/kir' },
-    ]
+    import { cocktailMenu } from '~/entities/cocktail/'
 
     const isShowMenu = ref(false)
     const iconName = computed(() => isShowMenu.value ? 'close' : 'menu')
@@ -24,7 +19,7 @@
             :class="{ 'layout-default__sidebar--show': isShowMenu }"
         >
             <div class="layout-default__sticky">
-                <UiNavMenu :items="menu" />
+                <UiNavMenu :items="cocktailMenu" />
             </div>
         </aside>
         <main class="layout-default__container">

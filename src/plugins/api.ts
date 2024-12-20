@@ -1,10 +1,10 @@
 import type { FetchOptions } from 'ofetch'
 import { defineNuxtPlugin } from '#app'
 import { $fetch } from 'ofetch'
-import CatalogModule from '~/app/repository/modules/cocktail/cocktail'
+import CocktailModule from '~/entities/cocktail/model/repository/cocktail'
 
 export interface IApiInstance {
-    catalog: CatalogModule
+  cocktail: CocktailModule
 }
 
 export default defineNuxtPlugin({
@@ -18,7 +18,7 @@ export default defineNuxtPlugin({
         const apiFetcher = $fetch.create(fetchOptions)
 
         const modules: IApiInstance = {
-            catalog: new CatalogModule(apiFetcher),
+            cocktail: new CocktailModule(apiFetcher),
         }
 
         return {

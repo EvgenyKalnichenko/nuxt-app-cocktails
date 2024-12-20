@@ -1,6 +1,5 @@
 <script setup lang="ts">
-    import type { Cocktail } from '~/app/repository/modules/cocktail/type'
-    import UiImage from '~/shared/components/UiImage/UiImage.vue'
+    import type { Cocktail } from './../model/repository/type'
 
     defineProps<{
         cocktail: Cocktail

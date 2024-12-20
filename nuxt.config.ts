@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { routes } from './src/routes/index'
+import { routes } from './src/app/routes/index'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
@@ -20,7 +20,6 @@ export default defineNuxtConfig({
     },
   },
 
-  // Глобальные стили
   css: ['@/app/assets/style/main.scss'],
   vite: {
     css: {

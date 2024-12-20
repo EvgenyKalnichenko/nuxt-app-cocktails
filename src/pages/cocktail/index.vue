@@ -1,6 +1,5 @@
 <script setup lang="ts">
-    import { useQuery } from '@tanstack/vue-query'
-    import { CocktailDetail } from '~/entities/cocktail'
+    import { CocktailDetail, useQueryCocktail } from '~/entities/cocktail'
 
     const { $api } = useNuxtApp()
 
@@ -8,12 +7,11 @@
 
     const catalogId = computed(() => String(route.params.id))
 
-    const { data, suspense, isError } = useQuery({
-        queryKey: ['catalog', catalogId],
-        queryFn: async () => await $api.catalog.getCocktail(catalogId.value),
-        staleTime: Infinity,
-        retry: 2,
-    })
+    const {
+        suspense,
+        data,
+        isError
+    } = useQueryCocktail(catalogId, $api.cocktail)
 
     await suspense()
 </script>
