@@ -1,8 +1,6 @@
 <script setup lang="ts">
     import { CocktailDetail, useQueryCocktail } from '~/entities/cocktail'
 
-    const { $api } = useNuxtApp()
-
     const route = useRoute()
 
     const catalogId = computed(() => String(route.params.id))
@@ -11,7 +9,7 @@
         suspense,
         data,
         isError
-    } = useQueryCocktail(catalogId, $api.cocktail)
+    } = useQueryCocktail(catalogId)
 
     await suspense()
 </script>

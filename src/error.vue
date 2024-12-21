@@ -7,7 +7,7 @@
 <template>
     <section class="page-error">
         <UiContainer class="page-error__container">
-            <template v-if="error.statusCode">
+            <template v-if="error.statusCode === 404">
                 <div class="page-error__code">
                     404
                 </div>
@@ -18,12 +18,11 @@
                     Неправильно набран адрес или такой страницы больше не существует.
                 </p>
             </template>
-            <h1
-                v-else
-                class="page-error__title"
-            >
-                Упс что то пошло не так...
-            </h1>
+            <template v-else>
+                <h1 class="page-error__title">
+                    Упс что то пошло не так...
+                </h1>
+            </template>
             <UiLink
                 variant="primary"
                 to="/"

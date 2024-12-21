@@ -22,7 +22,7 @@
     <article class="cocktail-detail">
         <h2>{{ cocktail.strDrink }}</h2>
 
-        <ul class="catalog-cocktail__list">
+        <ul class="cocktail-detail__list">
             <li>{{ cocktail.strCategory }}</li>
             <li>{{ cocktail.strAlcoholic }}</li>
             <li>{{ cocktail.strGlass }}</li>
@@ -32,7 +32,7 @@
         <p>{{ cocktail.strInstructions }}</p>
 
         <h3>List ingredients:</h3>
-        <ul class="catalog-cocktail__list">
+        <ul class="cocktail-detail__list">
             <li
                 v-for="(ingridient, index) in extractIngredients(cocktail)"
                 :key="index"
