@@ -5,6 +5,7 @@
 
     const catalogId = computed(() => String(route.params.id))
 
+    // Универсальный вариант который можно затянуть и в приложение без накста
     const {
         suspense,
         data,
@@ -12,6 +13,21 @@
     } = useQueryCocktail(catalogId)
 
     await suspense()
+
+    // В наксте есть кеширование поэтому можно так:
+    //
+    // const { $api } = useNuxtApp()
+    // const { data, status } = await useAsyncData(`cocktail-${catalogId.value}`, async () => await $api.cocktail.getCocktail(catalogId.value), {
+    //     watch: [catalogId],
+    //     getCachedData: (key, nuxtApp) => {
+    //         const data = nuxtApp.payload.data[key] || nuxtApp.static.data[key]
+    //         if (!data) return
+    //
+    //         return data
+    //     },
+    // })
+    //
+    // const isError = computed(() => status.value === 'error')
 </script>
 
 <template>
