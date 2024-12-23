@@ -28,10 +28,17 @@
     // })
     //
     // const isError = computed(() => status.value === 'error')
+
+    const title = computed(() => data.value?.drinks?.[0]?.strDrink || 'Cocktail')
 </script>
 
 <template>
     <div class="page-cocktail">
+        <Head>
+            <Title v-if="title">
+                {{ title }}
+            </Title>
+        </Head>
         <section
             v-if="isError"
             class="page-cocktail__error"
